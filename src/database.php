@@ -19,9 +19,9 @@ class Database
         return $conn;
     }
 
-    public function getDataExerciseOne($conn)
+    public function getDataExercise($conn, $table)
     {
-        $sql = "SELECT * FROM recintoestilo";
+        $sql = "SELECT * FROM $table";
         $result = $conn->query($sql);
 
         if ($result->num_rows > 0) {

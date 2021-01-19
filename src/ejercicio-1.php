@@ -423,8 +423,8 @@
 
         </form>
         <?php
-        include "./shared.php";
-        include "./database.php";
+        include "shared.php";
+        include "database.php";
         if ($_POST['submit']) {
                 $database = new Database();
                 $conn = $database->connect();
@@ -434,7 +434,7 @@
                 $CA = $_POST['c7'] + $_POST['c11'] + $_POST['c15'] + $_POST['c19'] + $_POST['c31'] + $_POST['c35'];
                 $EA = $_POST['c4'] + $_POST['c12'] + $_POST['c24'] + $_POST['c28'] + $_POST['c32'] + $_POST['c36'];
 
-                $rows = $database->getDataExerciseOne($conn);
+                $rows = $database->getDataExercise($conn, "recintoestilo");
 
                 $bestResult = null;
                 $style = null;
