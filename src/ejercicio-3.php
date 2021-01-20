@@ -9,15 +9,16 @@
 
 <body>
     <?php
-
-    include("header.php");
-
+    include "header-2.php";
     ?>
-    <h1>Ejercicio 3</h1>
-    <p>
-        Llene selecciones las opciones en el formulario que se le presenta en la parte de abajo y se le calculará el tipo de profesor que usted es.
+    <div>
+        <h1>Ejercicio 3</h1>
+        <p>
+            Llene selecciones las opciones en el formulario que se le presenta en la parte de abajo y se le calculará el tipo de profesor que usted es.
 
-    </p>
+        </p>
+    </div>
+
     <form action="ejercicio-3.php" method="post">
         A: <select name="A">
             <option value="3">3</option>
@@ -61,7 +62,7 @@
         </select>
         <input type="submit" value="Calcular" name="submit">
     </form>
-
+    <br>
     <?php
     include "database.php";
     include "shared.php";
@@ -194,6 +195,8 @@
     }
 
     ?>
+    <br>
+    <a href="../index.php">Volver</a>
 </body>
 
 </html>

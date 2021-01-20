@@ -8,7 +8,13 @@
 </head>
 
 <body>
-    <?php include("header.php") ?>
+    <?php
+    include "header-2.php";
+    ?>
+    <div>
+        <h1>Ejercicio 2</h1>
+        <p>Llene el formulario y la aplicación le dará el dato que hace falta ya sea el promedio, el sexo, el estilo de aprendizaje o el recinto</p>
+    </div>
     <form name="final" action="ejercicio-2.php" method="post">
         <br>
         Escriba su Promedio:<input type="Text" name="promedio"><br>
@@ -33,7 +39,7 @@
             <font size="4"> -------------------------------------------------</font>
         </font><input value="Calcular" type="submit" name="submit">
     </form>
-
+    <br>
     <?php
     include "shared.php";
     include "database.php";
@@ -133,6 +139,8 @@
     }
 
     ?>
+    <br>
+    <a href="../index.php">Volver</a>
 </body>
 
 </html>

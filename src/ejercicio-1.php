@@ -8,7 +8,13 @@
 </head>
 
 <body>
-        <?php include("header.php"); ?>
+        <?php
+        include "header-2.php";
+        ?>
+        <div>
+                <h1>Ejercicio 1</h1>
+                <p>Llene el formulario y la aplicación le dará su tipo de aprendizaje</p>
+        </div>
         <p class="western" align="justify" lang="es-ES">
                 <font color="#FF0000">
                         <font size="3"><b>CUAL ES SU ESTILO DE APRENDIZAJE?</b></font>
@@ -422,6 +428,7 @@
                 </font><input value="CALCULAR" name="submit" type="submit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
         </form>
+        <br>
         <?php
         include "shared.php";
         include "database.php";
@@ -451,6 +458,8 @@
                 echo "<p>Estilo: $style</p>";
         }
         ?>
+        <br>
+        <a href="../index.php">Volver</a>
 </body>
 
 </html>

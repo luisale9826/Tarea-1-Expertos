@@ -4,10 +4,10 @@ class Database
 
     public function connect()
     {
-        $servername = "localhost";
-        $username = "root";
-        $password = "root";
-        $db = "expertos";
+        $servername = "remotemysql.com";
+        $username = "qcfLX4UH7j";
+        $password = "HErIGDdxlf";
+        $db = "qcfLX4UH7j";
 
         // Create connection
         $conn = mysqli_connect($servername, $username, $password, $db);

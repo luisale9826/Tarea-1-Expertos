@@ -9,10 +9,12 @@
 
 <body>
     <?php
-
-    include("header.php");
-
+    include "header-2.php";
     ?>
+    <div>
+        <h1>Ejercicio 4</h1>
+        <p>Llene el formulario y la aplicación le dará el tipo de red ya sea A o B.</p>
+    </div>
     <form action="ejercicio-4.php" method="post">
         Reliability: <select name="rel">
             <option value="2">2</option>
@@ -34,6 +36,7 @@
         <input type="submit" value="Calcular" name="submit">
     </form>
 
+    <br>
     <?php
     include "database.php";
     include "shared.php";
@@ -105,6 +108,8 @@
     }
 
     ?>
+    <br>
+    <a href="../index.php">Volver</a>
 </body>
 
 </html>
