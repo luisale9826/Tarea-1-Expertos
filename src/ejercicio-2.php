@@ -46,6 +46,9 @@
     if ($_POST["submit"]) {
         $database = new Database();
         $conn = $database->connect();
+
+        // Este apartado se recolectan las variable que el usuario ingresó para hacer el calculo
+
         $sexo = $_POST["sexo"];
         $promedio = $_POST["promedio"];
         if ($promedio == null) {
@@ -53,11 +56,17 @@
         }
         $estilo = $_POST["estilo"];
         $recinto = $_POST["recinto"];
+
+
         $rows = $database->getDataExercise($conn, "estilosexopromediorecinto");
 
         $bestResult = null;
         $results = [];
         $array = array($sexo, $recinto, $promedio, $estilo);
+
+        // Este fragmento de código se encarga de llamar al algoritmo de Euclides y hacer la estimación
+        // Utilizando los datos suministrados por el usuario.
+        // Por último muestra el dato no sumistrado por el usuario en pantalla ya sea el promedio, el sexo, el recinto o el estilo de Aprendizaje.
         while ($row = $rows->fetch_assoc()) {
             $comparisonArray = array(getSexo($row['sexo']), getRecinto($row['recinto']), $row['promedio'], getEstilo($row['estilo']));
 
@@ -110,16 +119,29 @@
     ?>
 
     <?php
+
+    // Esta función toma el sexo y le otorga un valor numérico para que sea posible utilizarlo en la
+    // estimación.
+    // Parámetros: El sexo
+    // Retorno: el valor numérico que posee el sexo de la persona.
     function getSexo($sexo)
     {
         return $sexo == 'M' ? 1 : 2;
     }
 
+    // Esta función toma el recinto y le otorga un valor numérico para que sea posible utilizarlo en la
+    // estimación.
+    // Parámetros: El recinto
+    // Retorno: el valor numérico que posee el recinto de la persona.
     function getRecinto($recinto)
     {
         return $recinto == 'Paraiso' ? 5 : 6;
     }
 
+    // Esta función toma el estilo de aprendizaje y le otorga un valor numérico para que sea posible utilizarlo en la
+    // estimación.
+    // Parámetros: El estilo de aprendizaje
+    // Retorno: el valor numérico que posee el estilo de aprendizaje de la persona.
     function getEstilo($estilo)
     {
         switch ($estilo) {

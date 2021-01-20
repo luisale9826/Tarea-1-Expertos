@@ -2,6 +2,9 @@
 class Database
 {
 
+    // Esta función se encarga de establecer la conección con la base de datos y regresa la conección
+    // con la base.
+    // Retrona: La conección establecida con la base de datos
     public function connect()
     {
         $servername = "remotemysql.com";
@@ -19,6 +22,10 @@ class Database
         return $conn;
     }
 
+    // Esta función se encarga de realizar las consultas a la base de datos y obtener los datos para 
+    // realizar las estimaciones.
+    // Parametros: $conn = conección con la base de datos, $table = tabla a la que va dirigida la consulta
+    // Retorna: los datos obtenidos de la base de datos o nulo;
     public function getDataExercise($conn, $table)
     {
         $sql = "SELECT * FROM $table";

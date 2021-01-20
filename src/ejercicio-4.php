@@ -41,6 +41,8 @@
     include "database.php";
     include "shared.php";
 
+    // Este apartado se recolectan las variable que el usuario ingresó para hacer el calculo
+
     $rel = $_POST['rel'];
     $links = $_POST['links'];
     $cap = $_POST['cap'];
@@ -54,6 +56,9 @@
 
         $rows = $database->getDataExercise($conn, "redes");
 
+        // Este fragmento de código se encarga de llamar al algoritmo de Euclides y hacer la estimación
+        // Utilizando los datos suministrados por el usuario.
+        // Por último muestra la clase de red en pantalla según los datos suministrados por el usuario.
         $bestResult = null;
         $class = null;
         $array = array($rel, $links, $cap, $cost);
@@ -76,7 +81,9 @@
 
 
     <?php
-
+    // Esta función se encarga de trabajar los datos del nivel de Capacidad para que, sea posible hacer las estimaciones.
+    // Parámetros: La Capacidad de la red.
+    // Retorno: Restorna el número que se le otroga a ese nivel de capacidad de la red.
     function getCapacity($cap)
     {
         switch ($cap) {
@@ -92,6 +99,9 @@
         }
     }
 
+    // Esta función se encarga de trabajar los datos del nivel el Costo para que, sea posible hacer las estimaciones.
+    // Parámetros: La Costo de la red.
+    // Retorno: Restorna el número que se le otroga a ese nivel de costo de la red.
     function getCost($cost)
     {
         switch ($cost) {

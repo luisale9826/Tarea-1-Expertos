@@ -436,6 +436,9 @@
                 $database = new Database();
                 $conn = $database->connect();
 
+                // Este apartado se recolectan las variable que el usuario ingresó para hacer el calculo
+                // se suma para obtener los valor de EC, OR, CA y EA que serán utilizados en el algoritmo
+
                 $EC = $_POST['c5'] + $_POST['c9'] + $_POST['c13'] + $_POST['c17'] + $_POST['c25'] + $_POST['c29'];
                 $OR = $_POST['c2'] + $_POST['c10'] + $_POST['c22'] + $_POST['c26'] + $_POST['c30'] + $_POST['c34'];
                 $CA = $_POST['c7'] + $_POST['c11'] + $_POST['c15'] + $_POST['c19'] + $_POST['c31'] + $_POST['c35'];
@@ -446,6 +449,10 @@
                 $bestResult = null;
                 $style = null;
                 $array = array($CA, $EC, $EA, $OR);
+
+                // Este fragmento de código se encarga de llamar al algoritmo de Euclides y hacer la estimación
+                // Utilizando los datos suministrados por el usuario.
+                // Por último muestra en pantalla el estilo de Aprendizaje que posee el usuario según los datos suministrados.
                 while ($row = $rows->fetch_assoc()) {
                         $comparisonArray = array($row['ca'], $row['ec'], $row['ea'], $row['ors']);
                         $result = euclides($array, $comparisonArray);

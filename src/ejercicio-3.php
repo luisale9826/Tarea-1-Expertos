@@ -72,6 +72,8 @@
         $database = new Database();
         $conn = $database->connect();
 
+        // Este apartado se recolectan las variable que el usuario ingresó para hacer el calculo
+
         $A = $_POST["A"];
         $B = $_POST["B"];
         $C = $_POST["C"];
@@ -85,6 +87,10 @@
 
         $bestResult = null;
         $type = null;
+
+        // Este fragmento de código se encarga de llamar al algoritmo de Euclides y hacer la estimación
+        // Utilizando los datos suministrados por el usuario.
+        // Por último muestra el tipo de Profesor Básico, Intermedio o Avanzado en pantalla según los datos suministrados por el usuario.
         $array = array($A, $B, $C, $D, $E, $F, $G, $H);
         while ($row = $rows->fetch_assoc()) {
             $comparisonArray = array(
@@ -104,6 +110,10 @@
     ?>
 
     <?php
+    // Esta función toma los datos que recibe y les da formato para que sea posible utilizarlos para hacer
+    // los cálculos
+    // Parámetros: La letra.
+    // Retorna: El valor numérico que se le otorga a esa letra.
     function getNumberB($letter)
     {
         switch ($letter) {
@@ -119,6 +129,10 @@
         }
     }
 
+    // Esta función toma los datos que recibe y les da formato para que sea posible utilizarlos para hacer
+    // los cálculos
+    // Parámetros: La letra.
+    // Retorna: El valor numérico que se le otorga a esa letra.
     function getNumberC($letter)
     {
         switch ($letter) {
@@ -134,6 +148,10 @@
         }
     }
 
+    // Esta función toma los datos que recibe y les da formato para que sea posible utilizarlos para hacer
+    // los cálculos
+    // Parámetros: La letra.
+    // Retorna: El valor numérico que se le otorga a esa letra.
     function getNumberE($letter)
     {
         switch ($letter) {
@@ -149,6 +167,10 @@
         }
     }
 
+    // Esta función toma los datos que recibe y les da formato para que sea posible utilizarlos para hacer
+    // los cálculos
+    // Parámetros: La letra.
+    // Retorna: El valor numérico que se le otorga a esa letra.
     function getNumberF($letter)
     {
         switch ($letter) {
@@ -164,6 +186,10 @@
         }
     }
 
+    // Esta función toma los datos que recibe y les da formato para que sea posible utilizarlos para hacer
+    // los cálculos
+    // Parámetros: La letra.
+    // Retorna: El valor numérico que se le otorga a esa letra.
     function getNumberG($letter)
     {
         switch ($letter) {
@@ -179,6 +205,10 @@
         }
     }
 
+    // Esta función toma los datos que recibe y les da formato para que sea posible utilizarlos para hacer
+    // los cálculos
+    // Parámetros: La letra.
+    // Retorna: El valor numérico que se le otorga a esa letra.
     function getNumberH($letter)
     {
         switch ($letter) {
